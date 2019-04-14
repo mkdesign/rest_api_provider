@@ -1,7 +1,8 @@
 import 'dotenv/config'
 import express from 'express'
 import bodyParser from 'body-parser'
- const initDB = require('./db').initDb
+import { initDB } from './db'
+
 
 import morgan from 'morgan'
 import cors from 'cors'
@@ -16,17 +17,17 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
 
-// initDB()
+initDB()
 
-// app.listen(process.env.PORT, () => {
-//     console.log(`Server is listening on PORT ${process.env.PORT}`)
-// })
+app.listen(process.env.PORT, () => {
+    console.log(`Server is listening on PORT ${process.env.PORT}`)
+})
 
-initDb(err => {
-    app.listen(process.env.PORT, err => {
-      if (err) {
-        throw err
-      }
-      console.log(`server is listening on port ${process.env.PORT}`)
-    })
-  })
+// initDb(err => {
+//     app.listen(process.env.PORT, err => {
+//       if (err) {
+//         throw err
+//       }
+//       console.log(`server is listening on port ${process.env.PORT}`)
+//     })
+//   })
