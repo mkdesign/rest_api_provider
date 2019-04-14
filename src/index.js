@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import express from 'express'
 import bodyParser from 'body-parser'
+import routes from './routes'
 import { initDB } from './db'
 
 
@@ -16,18 +17,11 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
+app.use('/api', routes)
+
 
 initDB()
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is listening on PORT ${process.env.PORT}`)
 })
-
-// initDb(err => {
-//     app.listen(process.env.PORT, err => {
-//       if (err) {
-//         throw err
-//       }
-//       console.log(`server is listening on port ${process.env.PORT}`)
-//     })
-//   })
