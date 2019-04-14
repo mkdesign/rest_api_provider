@@ -1,3 +1,4 @@
+--UP
 CREATE TABLE students (
     id INTEGER PRIMARY KEY,
     first_name TEXT,
