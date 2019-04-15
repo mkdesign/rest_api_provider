@@ -31,7 +31,7 @@ CREATE TABLE student_classes (
     ON DELETE CASCADE ON UPDATE NO ACTION
 );
 
---Down 
+-- Down 
 DROP TABLE students;
 DROP TABLE teachers;
 DROP TABLE classes;
