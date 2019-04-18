@@ -2,8 +2,8 @@ import sqlite from 'sqlite'
 
 let _db
 
-export const initDB = async () => {     // NOT WORKING SELF CODES
-    console.log(1)
+export const initDB = async () => {
+    
     if(_db) {
         console.log('DB is already initialized')
         return _db
@@ -15,5 +15,9 @@ export const initDB = async () => {     // NOT WORKING SELF CODES
         })
     _db = db
     console.log(_db)
+    return _db
+}
+
+export const getDB = () => {
     return _db
 }

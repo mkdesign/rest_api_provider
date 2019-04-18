@@ -9,5 +9,3 @@ teachersRoutes.put('/:id', teachersController.update)
 teachersRoutes.delete('/:id', teachersController.destroy)
 
 export default teachersRoutes
-
-

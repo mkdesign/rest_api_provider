@@ -1,8 +1,18 @@
-
+import classModel from '../models/classes'
 
 export default {
-    list : (req, res) => {
-        res.status(200).send('list of classes')
+    list : async (req, res, next) => {
+        try {
+            const classes = await classModel.findAll(req, next)
+            console.log(classes)
+             res.status(200).json({
+                classes : classes
+            })
+        }
+        catch(err) {
+            next(err)
+        }
+        
     },
     findById : (id, res) => {
         res.status(200).send('show id')
