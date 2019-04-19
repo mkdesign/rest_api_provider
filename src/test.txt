@@ -1,0 +1,17 @@
+INSERT INTO students (first_name,last_name) VALUES ('Peichi', 'Chien');
+INSERT INTO students (first_name,last_name) VALUES ('Peichi2', 'Chien2');
+INSERT INTO students (first_name,last_name) VALUES ('Peichi3', 'Chien3');
+
+
+ {
+     "code" : "cls1",
+     "name": "fullstack",
+     "teacher_id": 1,
+     "start_date" : "2011-10-05T14:48:00.000Z",
+    "end_date" : "2011-10-05T14:48:00.000Z"
+ }
+
+ {
+     "first_name" : "Peichi",
+     "last_name" : "Chien"
+ }
