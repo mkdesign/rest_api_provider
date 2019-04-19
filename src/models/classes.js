@@ -19,7 +19,7 @@ export default {
         try{
             const db = getDB()
             const classes = await db.get(SQL`SELECT 
-            teachers.name As teacher_name, id, code, name, start_Date, end_date
+            teachers.first_name As teacher_first_name, teachers.last_name As teacher_last_name, classes.id, code, name, start_Date, end_date
              FROM classes INNER JOIN teachers ON teachers.id = classes.teacher_id WHERE classes.id = ${id}`)
             if(classes == undefined) {
                 return null

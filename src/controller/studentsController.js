@@ -18,7 +18,7 @@ export default {
           const studentId = req.params.id * 1
     
           const requestStudent = await studentModel.findById(studentId, next)
-          if (requestStudent !== undefined) {
+          if (requestStudent !== undefined || requestStudent !==null) {
             return res.send(requestStudent)
           } else {
             return res.status(404).end()

@@ -18,6 +18,7 @@ export default {
           const classId = req.params.id * 1
     
           const requestClass = await classModel.findById(classId, next)
+          console.log(requestClass)
           if (requestClass !== undefined) {
             return res.send(requestClass)
           } else {
