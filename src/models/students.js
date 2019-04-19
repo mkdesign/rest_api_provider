@@ -76,7 +76,12 @@ export default {
             const db = getDB()
             const classes = await db.all(`SELECT * FROM classes 
                 INNER JOIN student_classes ON classes.id = student_classes.class_id
-                INNER JOIN students ON students.id = student_classes.student_id`)
+                INNER JOIN students ON students.id = student_classes.student_id
+                WHERE students.id = ${id}`)
+            if(classes == undefined) {
+                return null
+            }
+            return await classes
         }
         catch(err) {
             next(err)

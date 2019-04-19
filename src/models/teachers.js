@@ -77,6 +77,10 @@ export default {
             const db = getDB()
             const classes = await db.all(`SELECT * FROM classes 
                 INNER JOIN teachers ON classes.teacher_id = teachers.id`)
+            if(classes == undefined) {
+                return null
+            }
+            return await classes
         }
         catch(err) {
             next(err)

@@ -88,5 +88,18 @@ export default {
         catch(err) {
             next(err)
         }
+    },
+    getTeacherClass : async (req, res, next) => {
+        try {
+            const id = req.params.id * 1
+            const classes = await teacherModel.allClasses(id, next)
+            
+            res.status(200).json({
+                classes : classes
+            })
+        }
+        catch(err) {
+            next(err)
+        }
     }
 }

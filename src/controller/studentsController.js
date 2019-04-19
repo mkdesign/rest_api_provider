@@ -4,7 +4,7 @@ export default {
     list : async (req, res, next) => {
         try {
             const students = await studentModel.findAll(req, next)
-            console.log(students)
+            
              res.status(200).json({
                 students : students
             })
@@ -91,6 +91,19 @@ export default {
                     errors: 'the post does not exist'
                 })
             }
+        }
+        catch(err) {
+            next(err)
+        }
+    },
+    getStuClass : async (req,res,next) => {
+        try {
+            const id = req.params.id * 1
+            const classes = await studentModel.allClasses(id, next)
+            
+            res.status(200).json({
+                classes : classes
+            })
         }
         catch(err) {
             next(err)
