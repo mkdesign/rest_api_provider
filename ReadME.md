@@ -1,2 +1,13 @@
-Babel gives the ability of using ECMASCRIPT Js to Node.
-Dot Env is also used for keeping variables used all over the enviroment for global configuration. // use it process.env.GLOB_VAR 
+# A simple REST Api routes
+
+- The objective for this project is create a REST api that allows the users of the api to manage a SQL database of classes, teachers, and students
+- This project was defined as the final project for FullStack Module 3
+
+### Instructions
+- You will need to install dependencies after unzipping this folder
+
+  ```$ npm install```
+
+- To start a server and test with postman or curl enter:
+
+  ```$ npm start```
