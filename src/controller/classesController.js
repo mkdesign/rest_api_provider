@@ -82,7 +82,7 @@ export default {
                 })
             }else {
                 res.status(404).send({
-                    errors: 'the post does not exist'
+                    errors: 'the class does not exist'
                 })
             }
         }
