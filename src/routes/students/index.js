@@ -4,7 +4,7 @@ import express from 'express'
 const studentsRoutes = express.Router()
 studentsRoutes.get('/', studentsController.list)
 studentsRoutes.get('/:id', studentsController.findById)
-studentsRoutes.get('/:id/classes', studentsController.getStuClass)
+// studentsRoutes.get('/:id/classes', studentsController.getStuClass)
 studentsRoutes.post('/', studentsController.create)
 studentsRoutes.put('/:id', studentsController.update)
 studentsRoutes.delete('/:id', studentsController.destroy)

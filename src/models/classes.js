@@ -30,13 +30,13 @@ export default {
             next(err)
         }
     },
-    create : async (class, next) => {
+    create : async (newClass, next) => {
         try {
             const db = getDB()
             const created = await db.run(
                 SQL`INSERT INTO classes
                     (code,name,teacher_id,start_date, end_date)
-                    VALUES (${class.code},${class.name},${class.teacher_id},${class.start_date},${class.end_date})`
+                    VALUES (${newClass.code},${newClass.name},${newClass.teacher_id},${newClass.start_date},${newClass.end_date})`
                 )
             return await created
         }
@@ -44,13 +44,13 @@ export default {
             next(err)
         }
     },
-    update : async (id, class, next) => {
+    update : async (id, updateClass, next) => {
         try {
             const db = getDB()
-            let columns = Object.keys(class)
+            let columns = Object.keys(updateClass)
             let columnsql = columns.join(',')
             let cvalues = columns.map(col => {
-                return class[col]
+                return updateClass[col]
             })
 
             let values = columns.map(() => {
@@ -67,7 +67,7 @@ export default {
     },
     destroy  : async (id, next) => {
         try {
-            const db = getDb()
+            const db = getDB()
             const deleteClass = await db.run(SQL`DELETE FROM classes WHERE id=${id}`)
             return await deleteClass
         } catch (err) {

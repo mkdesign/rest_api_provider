@@ -65,11 +65,21 @@ export default {
     },
     destroy : async (id, next) => {
         try {
-            const db = getDb()
+            const db = getDB()
             const deleteTeacher = await db.run(SQL`DELETE FROM teachers WHERE id=${id}`)
             return await deleteTeacher
         } catch (err) {
         next(err)
         }
-    }   
+    },
+    allClasses : async (id, next) => {
+        try {
+            const db = getDB()
+            const classes = await db.all(`SELECT * FROM classes 
+                INNER JOIN teachers ON classes.teacher_id = teachers.id`)
+        }
+        catch(err) {
+            next(err)
+        }
+    }  
 }
